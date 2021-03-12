@@ -1,4 +1,4 @@
-class ItemAlternative {
+export class ItemAlternative {
   id: number;
   ExerciseCompleteId: string;
   description: string;

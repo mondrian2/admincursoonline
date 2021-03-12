@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpEvent} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {Observable} from 'rxjs';
+import {ExerciseComplete} from '../model/exercise-complete';
 
 @Injectable({
   providedIn: 'root'
@@ -10,19 +11,19 @@ export class ExerciseCompleteService {
 
   constructor(private http: HttpClient) {}
 
-  public get(): Observable<any> {
-    return this.http.get(environment.uriServer + '/complete-exercises');
+  public get(): Observable<ExerciseComplete> {
+    return this.http.get<ExerciseComplete>(`${environment.uriServer}complete-exercises`);
   }
 
-  public post(data): Observable<any> {
-    return this.http.post(environment.uriServer, data);
+  public post(data): Observable<ExerciseComplete> {
+    return this.http.post<ExerciseComplete>(environment.uriServer, data);
   }
 
-  public delete(id: number): Observable<any> {
-    return this.http.delete(environment.uriServer + 'id');
+  public delete(id: number): Observable<ExerciseComplete> {
+    return this.http.delete<ExerciseComplete>(environment.uriServer + 'id');
   }
 
-  public update(id: number, data: any): Observable<any> {
-    return this.http.patch(environment.uriServer, id, data);
+  public put(data: ExerciseComplete): Observable<HttpEvent<ExerciseComplete>> {
+    return this.http.put<ExerciseComplete>(environment.uriServer, data, null);
   }
 }

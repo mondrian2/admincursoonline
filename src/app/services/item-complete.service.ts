@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpEvent} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {Observable} from 'rxjs';
+import {ItemComplete} from '../model/item-complete';
 
 @Injectable({
   providedIn: 'root'
@@ -10,19 +11,19 @@ export class ItemCompleteService {
 
   constructor(private http: HttpClient) {}
 
-  public get(): Observable<any> {
-    return this.http.get(environment.uriServer + '/complete-items');
+  public get(): Observable<ItemComplete> {
+    return this.http.get<ItemComplete>(`${environment.uriServer}complete-items`);
   }
 
-  public post(data): Observable<any> {
-    return this.http.post(environment.uriServer, data);
+  public post(data): Observable<ItemComplete> {
+    return this.http.post<ItemComplete>(environment.uriServer, data);
   }
 
-  public delete(id: number): Observable<any> {
-    return this.http.delete(environment.uriServer + 'id');
+  public delete(id: number): Observable<ItemComplete> {
+    return this.http.delete<ItemComplete>(environment.uriServer + 'id');
   }
 
-  public update(id: number, data: any): Observable<any> {
-    return this.http.patch(environment.uriServer, id, data);
+  public put(data: ItemComplete): Observable<HttpEvent<ItemComplete>> {
+    return this.http.put<ItemComplete>(environment.uriServer, data, null);
   }
 }
