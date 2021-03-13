@@ -12,18 +12,18 @@ export class ExerciseCompleteService {
   constructor(private http: HttpClient) {}
 
   public get(): Observable<ExerciseComplete> {
-    return this.http.get<ExerciseComplete>(`${environment.uriServer}complete-exercises`);
+    return this.http.get<ExerciseComplete>(`${environment.uriServer}exercises-complete`);
   }
 
   public post(data): Observable<ExerciseComplete> {
-    return this.http.post<ExerciseComplete>(environment.uriServer, data);
+    return this.http.post<ExerciseComplete>(`${environment.uriServer}exercise-complete`, data);
   }
 
   public delete(id: number): Observable<ExerciseComplete> {
-    return this.http.delete<ExerciseComplete>(environment.uriServer + 'id');
+    return this.http.delete<ExerciseComplete>(`${environment.uriServer}exercise-complete` + 'id');
   }
 
   public put(data: ExerciseComplete): Observable<HttpEvent<ExerciseComplete>> {
-    return this.http.put<ExerciseComplete>(environment.uriServer, data, null);
+    return this.http.put<ExerciseComplete>(`${environment.uriServer}exercise-complete`, data, null);
   }
 }
