@@ -16,6 +16,7 @@ export class ExerciseCompleteService {
   }
 
   public post(data): Observable<ExerciseComplete> {
+    console.log(data, `${environment.uriServer}exercise-complete`);
     return this.http.post<ExerciseComplete>(`${environment.uriServer}exercise-complete`, data);
   }
 

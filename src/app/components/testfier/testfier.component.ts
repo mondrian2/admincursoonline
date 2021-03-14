@@ -22,12 +22,8 @@ export class TestfierComponent implements OnInit {
     this.exerciseComplete.book = 'Basico 1';
     this.exerciseComplete.command = 'Comando do exercicio do basico 1';
     this.exerciseComplete.package = '1 pachetto';
-    this.exerciseComplete.book = 'Basico 1';
-    this.exerciseComplete.command = 'Segundo Comando do exercicio do basico 1';
-    this.exerciseComplete.package = '1 pachetto';
-    this.srv.get().subscribe(r => console.log(r));
-    this.srv1.post(this.exerciseComplete);
-    this.srv1.post(this.exerciseComplete1);
+    this.srv1.get().subscribe(r => console.log('retorno get', r));
+    this.srv1.post(this.exerciseComplete).subscribe(r => console.log('exerciseComplete', r));
   }
 
 }
