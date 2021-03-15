@@ -1,6 +1,6 @@
 export class ItemComplete {
   id: number;
-  ExerciseCompleteId; number;
+  ExerciseId; number;
   label: string;
   options: string[];
 }

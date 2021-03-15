@@ -1,0 +1,38 @@
+<app-top [type] = 1></app-top>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-2 col-2  offset-md-3">
+      <a routerLink="/exercise-create">
+        <div class="btn bg-primary text-white ml-2">
+          <span class="material-icons">add</span>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-5">
+      <h1>Exercícios</h1>
+    </div>
+  </div>
+  <div class="row mt-2" *ngFor="let exercise of exercise$ | async">
+    <div class="col-md-4 offset-md-3">
+      <div class="container">
+        <div class="row">
+          <div class="card shadow border-0 col-md-12 p-1">
+            <div class="enunciado p-2">{{exercise.command}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <a routerLink="/exercise-edit/{{exercise.id}}">
+        <div class="btn bg-primary text-white ml-2">
+          <span class="material-icons">create</span>
+        </div>
+      </a>
+      <a (click) = "delete(exercise.id)">
+        <div class="btn bg-primary text-white ml-2">
+          <span class="material-icons">clear</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<nav class="navbar shadow p-2 navbar-light bg-light mb-5" *ngIf="type == 1">
+  <div class="container-fluid" (click) = "backClicked()">
+    <img src="../../../../assets/logo-monte-bianco.svg" class="img-fluid" alt="" srcset="">
+  </div>
+</nav>
+
+<nav class="navbar shadow navbar-light bg-light mb-5"  *ngIf="type == 2">
+  <div class="container-fluid" (click) = "backClicked()">
+    <a class="navbar-brand btn bg-primary back">
+      <span class="material-icons text-white pt-2">
+        keyboard_arrow_left
+      </span>
+    </a>
+    <img src="../../../../assets/logo-monte-bianco.svg" class="img-fluid" alt="" srcset="">
+  </div>
+</nav>

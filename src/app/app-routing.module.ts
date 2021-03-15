@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {TestfierComponent} from './components/testfier/testfier.component';
-import {ExerciseCompleteComponent} from './components/exercise-complete/exercise-complete.component';
-import {ExerciseAlternativeComponent} from './components/exercise-alternative/exercise-alternative.component';
+import {ExerciseListComponent} from './components/exercise/exercise-list/exercise-list.component';
+import {ExerciseCreateComponent} from './components/exercise/exercise-create/exercise-create.component';
+import {ExerciseEditComponent} from './components/exercise/exercise-edit/exercise-edit.component';
 
 const routes: Routes = [
-  { path: 'test', component: TestfierComponent},
-  { path: 'exercise-complete', component: ExerciseCompleteComponent},
-  { path: 'exercise-alternative', component: ExerciseAlternativeComponent},
+  { path: 'exercise-list', component: ExerciseListComponent},
+  { path: 'exercise-create', component: ExerciseCreateComponent},
+  { path: 'exercise-edit/:id', component: ExerciseEditComponent},
 ];
 
 @NgModule({

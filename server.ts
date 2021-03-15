@@ -25,7 +25,11 @@ export function app(): express.Express {
   // server.get('/api/**', (req, res) => { });
   // Serve static files from /browser
 
-  const apiProxy = proxy.createProxyMiddleware('/api', { target: 'https://montebiancocursoonline.herokuapp.com/api' });
+  const apiProxy = proxy.createProxyMiddleware('/api', {
+    target: 'https://montebiancocursoonline.herokuapp.com/api',
+    secure: false,
+    changeOrigin: true
+  });
   server.use('/api', apiProxy);
 
   server.get('*.*', express.static(distFolder, {

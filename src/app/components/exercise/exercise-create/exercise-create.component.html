@@ -1,0 +1,33 @@
+<app-top [type] = 2></app-top>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-5 offset-md-4">
+      <h1>Exercício-Add</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+
+      <form [formGroup]="form" (ngSubmit)="add()">
+        <div class="form-group">
+          <label for="bookinput">Livro:</label>
+          <input type="text" class="form-control" formControlName="book" name="book" id="bookinput"
+                 aria-describedby="Pacote">
+          <label for="packageinput">Pacote:</label>
+          <input type="text" class="form-control" formControlName="package" name="package" id="packageinput"
+                 aria-describedby="Pacote">
+          <label for="numberinput">Número:</label>
+          <input type="text" class="form-control" formControlName="number" name="number" id="numberinput"
+                 aria-describedby="numero da questao">
+          <label for="commandinput">Comando:</label>
+          <input type="text" class="form-control" formControlName="command" name="command" id="commandinput"
+                 aria-describedby="comando">
+          <label for="typeinput">Tipo:</label>
+          <input type="text" class="form-control" formControlName="type" name="type" id="typeinput"
+                 aria-describedby="tipo">
+        </div>
+        <button type="submit" class="btn btn-primary">enviar</button>
+      </form>
+    </div>
+  </div>
+</div>

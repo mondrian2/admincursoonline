@@ -1,6 +1,6 @@
 export class ItemAlternative {
   id: number;
-  ExerciseAlternativeId: string;
+  ExerciseId: string;
   description: string;
   correct: boolean;
 }
