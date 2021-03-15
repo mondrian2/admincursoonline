@@ -21,6 +21,7 @@ export class ExerciseListComponent implements OnInit {
     this.srv.delete(id).subscribe(r => this.ngOnInit());
   }
 
+
   ngOnInit(): void {
     this.load();
   }
