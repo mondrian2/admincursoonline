@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -14,7 +13,6 @@ import {ExerciseService} from '../../../services/exercise.service';
   styleUrls: ['./item-complete-create.component.scss']
 })
 export class ItemCompleteCreateComponent implements OnInit {
-  completeItem: ItemComplete;
   public exercise$: Observable<Exercise>;
   form: FormGroup;
   options: [];
@@ -22,12 +20,16 @@ export class ItemCompleteCreateComponent implements OnInit {
   expression: string;
   name: string;
 
-  constructor(private formBuilder: FormBuilder, private srvEx: ExerciseService, protected srv: ItemCompleteService, private activeRoute: ActivatedRoute, private route: Router) {
+  constructor(
+    private formBuilder: FormBuilder, private srvEx: ExerciseService,
+    protected srv: ItemCompleteService,
+    private activeRoute: ActivatedRoute,
+    private route: Router
+  ) {
 
   }
 
   private createForm(itemComplete: ItemComplete): void{
-    console.log(itemComplete);
     this.form = this.formBuilder.group({
       label: '',
       exerciseId: '',
