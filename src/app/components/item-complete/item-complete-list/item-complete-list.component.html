@@ -1,1 +1,42 @@
-<p>item-complete-list works!</p>
+<app-top [type] = 1></app-top>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-2 col-2  offset-md-3">
+      <a routerLink="/item-complete-create">
+        <div class="btn bg-primary text-white ml-2">
+          <span class="material-icons">add</span>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-5">
+      <h1>Itens</h1>
+    </div>
+  </div>
+
+  <div class="row mt-2" *ngFor="let item of item$ | async">
+    <div class="col-md-4 offset-md-3">
+      <div class="card border-0 p-3  shadow">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="descricao pt-2">
+              <div class="title">Sentença: {{item.label}} </div>
+              <div class="subtitle"><small>Opções: <span *ngFor="let o of item.options"> {{o}} </span></small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <a routerLink="/item-complete-edit/{{item.id}}">
+        <div class="btn bg-primary text-white ml-2">
+          <span class="material-icons">create</span>
+        </div>
+      </a>
+      <a (click) = "delete(item.id)">
+        <div class="btn bg-primary text-white ml-2">
+          <span class="material-icons">clear</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
