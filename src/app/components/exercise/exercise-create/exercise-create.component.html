@@ -1,8 +1,8 @@
-<app-top [type] = 2></app-top>
+<app-top [type]=2></app-top>
 <div class="container">
   <div class="row mt-5">
     <div class="col-md-5 offset-md-4">
-      <h1>Exercício-Add</h1>
+      <h1>Esercizi-Add</h1>
     </div>
   </div>
   <div class="row">
@@ -10,21 +10,54 @@
 
       <form [formGroup]="form" (ngSubmit)="add()">
         <div class="form-group">
-          <label for="bookinput">Livro:</label>
-          <input type="text" class="form-control" formControlName="book" name="book" id="bookinput"
-                 aria-describedby="Pacote">
-          <label for="packageinput">Pacote:</label>
-          <input type="text" class="form-control" formControlName="package" name="package" id="packageinput"
-                 aria-describedby="Pacote">
-          <label for="numberinput">Número:</label>
+          <label for="bookinput">Modulo:</label>
+          <select class="form-select" class="form-control" formControlName="book" name="book" id="bookinput"
+            aria-describedby="Pacote">
+            <option value="Básico I">Básico I</option>
+            <option value="Básico II">Básico II</option>
+            <option value="Básico III">Básico III</option>
+            <option value="Básico IV">Básico IV</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="packageinput">Pacchetto:</label>
+          <select class="form-select" class="form-control" formControlName="package" name="package" id="packageinput"
+            aria-describedby="Pacote">
+            <option value="1 Pacchetto">1 Pacchetto</option>
+            <option value="2 Pacchetto">2 Pacchetto</option>
+            <option value="3 Pacchetto">3 Pacchetto</option>
+            <option value="4 Pacchetto">4 Pacchetto</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="typeinput">Genere:</label>
+          <select class="form-select" class="form-control" formControlName="type" name="type" id="typeinput"
+            aria-describedby="tipo">
+            <option value="Completate">Completate</option>
+            <option value="Alternativa corretta">Alternativa corretta</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="numberinput">Numero:</label>
           <input type="text" class="form-control" formControlName="number" name="number" id="numberinput"
-                 aria-describedby="numero da questao">
-          <label for="commandinput">Comando:</label>
+            aria-describedby="numero da questao">
+        </div>
+
+        <div class="form-group">
+          <label for="commandinput">Istruzione 1:</label>
           <input type="text" class="form-control" formControlName="command" name="command" id="commandinput"
-                 aria-describedby="comando">
-          <label for="typeinput">Tipo:</label>
-          <input type="text" class="form-control" formControlName="type" name="type" id="typeinput"
-                 aria-describedby="tipo">
+            aria-describedby="comando">
+
+        </div>
+
+        <div class="form-group">
+          <label for="commandtwoinput">Istruzione 2 (opzionale):</label>
+          <input type="text" class="form-control" formControlName="commandtwo" name="commandtwo" id="commandtwoinput"
+            aria-describedby="comando">
+
         </div>
         <button type="submit" class="btn btn-primary">enviar</button>
       </form>

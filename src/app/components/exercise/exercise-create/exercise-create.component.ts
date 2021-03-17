@@ -21,6 +21,7 @@ export class ExerciseCreateComponent implements OnInit {
     this.form = new FormGroup({
       package: new FormControl(exercise.package),
       command: new FormControl(exercise.command),
+      commandtwo: new FormControl(exercise.commandtwo),
       book: new FormControl(exercise.book),
       number: new FormControl(exercise.number),
       type: new FormControl(exercise.type)
