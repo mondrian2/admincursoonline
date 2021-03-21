@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
 import {Exercise} from '../../../model/exercise';
 import {ExerciseService} from '../../../services/exercise.service';
+import {filter} from 'rxjs/operators';
 
 @Component({
   selector: 'app-exercise-list',
@@ -20,7 +21,6 @@ export class ExerciseListComponent implements OnInit {
   public delete(id): void {
     this.srv.delete(id).subscribe(r => this.ngOnInit());
   }
-
 
   ngOnInit(): void {
     this.load();

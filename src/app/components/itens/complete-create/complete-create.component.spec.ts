@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ItemCompleteEditComponent } from './item-complete-edit.component';
+import { CompleteCreateComponent } from './complete-create.component';
 
-describe('ItemCompleteEditComponent', () => {
-  let component: ItemCompleteEditComponent;
-  let fixture: ComponentFixture<ItemCompleteEditComponent>;
+describe('CompleteCreateComponent', () => {
+  let component: CompleteCreateComponent;
+  let fixture: ComponentFixture<CompleteCreateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ItemCompleteEditComponent ]
+      declarations: [ CompleteCreateComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ItemCompleteEditComponent);
+    fixture = TestBed.createComponent(CompleteCreateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

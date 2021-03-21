@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ItemCompleteListComponent } from './item-complete-list.component';
+import { CompleteListComponent } from './complete-list.component';
 
-describe('ItemCompleteListComponent', () => {
-  let component: ItemCompleteListComponent;
-  let fixture: ComponentFixture<ItemCompleteListComponent>;
+describe('CompleteListComponent', () => {
+  let component: CompleteListComponent;
+  let fixture: ComponentFixture<CompleteListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ItemCompleteListComponent ]
+      declarations: [ CompleteListComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ItemCompleteListComponent);
+    fixture = TestBed.createComponent(CompleteListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

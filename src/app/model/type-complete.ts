@@ -1,4 +1,4 @@
-export class ItemComplete {
+export class TypeComplete {
   id: number;
   exerciseId: number;
   label: string;

@@ -30,12 +30,13 @@ export class ExerciseEditComponent implements OnInit {
       .subscribe(exercise => {
         this.form = new FormGroup({
           id: new FormControl(exercise.id),
+          level: new FormControl(exercise.level),
           package: new FormControl(exercise.package),
-          command: new FormControl(exercise.command),
-          commandtwo: new FormControl(exercise.commandtwo),
-          book: new FormControl(exercise.book),
           number: new FormControl(exercise.number),
-          type: new FormControl(exercise.type)
+          type: new FormControl(exercise.type),
+          instructionOne: new FormControl(exercise.instructionOne),
+          instructionTwo: new FormControl(exercise.instructionTwo),
+          instructionTree: new FormControl(exercise.instructionTree)
         });
       });
   }

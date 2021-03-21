@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
-import {ItemComplete} from '../../../model/item-complete';
-import {ItemCompleteService} from '../../../services/item-complete.service';
+import {Observable} from 'rxjs';
 import {Exercise} from '../../../model/exercise';
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ExerciseService} from '../../../services/exercise.service';
+import {CompleteService} from '../../../services/complete.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {TypeComplete} from '../../../model/type-complete';
 
 @Component({
-  selector: 'app-item-complete-edit',
-  templateUrl: './item-complete-edit.component.html',
-  styleUrls: ['./item-complete-edit.component.scss']
+  selector: 'app-complete-create',
+  templateUrl: './complete-create.component.html',
+  styleUrls: ['./complete-create.component.scss']
 })
-export class ItemCompleteEditComponent implements OnInit {
+export class CompleteCreateComponent implements OnInit {
   public exercise$: Observable<Exercise>;
   form: FormGroup;
   options: [];
@@ -22,19 +22,17 @@ export class ItemCompleteEditComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder, private srvEx: ExerciseService,
-    protected srv: ItemCompleteService,
+    protected srv: CompleteService,
     private activeRoute: ActivatedRoute,
     private route: Router
   ) {
 
   }
 
-  private createForm(itemComplete: ItemComplete): void{
-    console.log(itemComplete);
+  private createForm(itemComplete: TypeComplete): void{
     this.form = this.formBuilder.group({
-      id: itemComplete.id,
-      label: itemComplete.label,
-      exerciseId: itemComplete.exerciseId,
+      label: '',
+      exerciseId: '',
       options: this.formBuilder.array([], [Validators.required])
     });
   }
@@ -43,9 +41,9 @@ export class ItemCompleteEditComponent implements OnInit {
     this.exercise$ = this.srvEx.get();
   }
 
-  update(): void {
+  add(): void {
     console.log(this.form.value);
-    this.srv.put(this.form.value.id, this.form.value)
+    this.srv.post(this.form.value)
       .subscribe(
         () => this.route.navigate(['item-complete-list']),
         e => console.log(e),
@@ -82,11 +80,7 @@ export class ItemCompleteEditComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.createForm(new ItemComplete());
+    this.createForm(new TypeComplete());
     this.loadExercise();
-
-    this.srv.search(this.activeRoute.snapshot.paramMap.get('id'))
-      .subscribe(itemComplete => this.createForm(itemComplete));
   }
 }
-

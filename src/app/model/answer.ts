@@ -3,8 +3,8 @@ export class Exercise {
   level: string;
   package: string;
   type: string;
-  number: string;
+  number: number;
   instructionOne: string;
   instructionTwo: string;
-  instructionTree: string;
+  instructionTee: string;
 }
