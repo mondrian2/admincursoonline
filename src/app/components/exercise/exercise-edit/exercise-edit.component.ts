@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Exercise} from '../../../model/exercise';
 import {ExerciseService} from '../../../services/exercise.service';
-import {Observable} from 'rxjs';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
 

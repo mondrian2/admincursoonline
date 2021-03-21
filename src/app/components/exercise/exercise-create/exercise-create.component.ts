@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Exercise} from '../../../model/exercise';
 import {ExerciseService} from '../../../services/exercise.service';
-
-import { Observable } from 'rxjs';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
