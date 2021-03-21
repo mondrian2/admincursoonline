@@ -1,7 +1,7 @@
 <app-top [type] = 1></app-top>
 <div class="container">
   <div class="row mt-5">
-    <div class="col-md-2 col-2  offset-md-3">
+    <div class="col-md-2 col-2  offset-md-2">
       <a routerLink="/exercise-create">
         <div class="btn bg-primary text-white ml-2">
           <span class="material-icons">add</span>
@@ -13,11 +13,12 @@
     </div>
   </div>
   <div class="row mt-2" *ngFor="let exercise of exercise$ | async">
-    <div class="col-md-4 offset-md-3">
+    <div class="col-md-6 offset-md-2">
       <div class="container">
         <div class="row">
           <div class="card shadow border-0 col-md-12 p-1">
-            <div class="enunciado p-2" [innerHTML]="exercise.instructionOne"></div>
+            <span>Exercise: {{exercise.number}}</span>
+            <span [innerHTML]="exercise.instructionOne"></span>
           </div>
         </div>
       </div>
