@@ -6,7 +6,7 @@
     </div>
   </div>
   <div class="row">
-    <div *ngIf="form" class="col-md-4 offset-md-4">
+    <div *ngIf="form" class="col-md-6 offset-md-3">
       <form [formGroup]="form" (ngSubmit)="update()">
         <div class="form-group">
           <label for="levelinput">Modulo:</label>
@@ -44,19 +44,35 @@
           <input type="text" class="form-control" formControlName="number" name="number" id="numberinput"
             aria-describedby="numero da questao">
         </div>
-
         <div class="form-group">
-          <label for="commandinput">Istruzione 1:</label>
-          <input type="text" class="form-control" formControlName="command" name="command" id="commandinput"
-            aria-describedby="comando">
-
+          <label for="instructionOneinput">Istruzione 1:</label>
+          <editor
+            apiKey="vfgx8r7yexo9xgmf11xwvoclgng4aotepr3vpetqygytgd0t"
+            formControlName="instructionOne" name="instructionOne" id="instructionOneinput"
+            [init]="{
+            toolbar: 'formatselect | bold italic | bullist numlist outdent indent'
+          }"
+          ></editor>
         </div>
 
         <div class="form-group">
-          <label for="commandtwoinput">Istruzione 2 (opzionale):</label>
-          <input type="text" class="form-control" formControlName="commandtwo" name="commandtwo" id="commandtwoinput"
-            aria-describedby="comando">
+          <label for="instructionTwoinput">Istruzione 2 (opzionale):</label>
+          <editor
+            formControlName="instructionTwo" name="instructionTwo" id="instructionTwoinput"
+            [init]="{
+            toolbar: 'formatselect | bold italic | bullist numlist outdent indent'
+          }"
+          ></editor>
+        </div>
 
+        <div class="form-group">
+          <label for="instructionTreeinput">Istruzione 3 (opzionale):</label>
+          <editor
+            formControlName="instructionTree" name="instructionTree" id="instructionTreeinput"
+            [init]="{
+            toolbar: 'formatselect | bold italic | bullist numlist outdent indent'
+          }"
+          ></editor>
         </div>
         <button type="submit" class="btn btn-primary">enviar</button>
       </form>

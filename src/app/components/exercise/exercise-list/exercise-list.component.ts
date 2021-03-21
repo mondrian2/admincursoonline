@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
 import {Exercise} from '../../../model/exercise';
 import {ExerciseService} from '../../../services/exercise.service';
-import {filter} from 'rxjs/operators';
 
 @Component({
   selector: 'app-exercise-list',
