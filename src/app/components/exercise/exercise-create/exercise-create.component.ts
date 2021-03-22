@@ -17,7 +17,6 @@ export class ExerciseCreateComponent implements OnInit {
   private createForm(exercise: Exercise): void{
     console.log(exercise);
     this.form = new FormGroup({
-      id: new FormControl(exercise.id),
       level: new FormControl(exercise.level),
       package: new FormControl(exercise.package),
       number: new FormControl(exercise.number),
