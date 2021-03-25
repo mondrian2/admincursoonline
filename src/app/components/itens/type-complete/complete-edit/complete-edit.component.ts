@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
-import {Exercise} from '../../../model/exercise';
+import {Exercise} from '../../../../model/exercise';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {ExerciseService} from '../../../services/exercise.service';
-import {CompleteService} from '../../../services/complete.service';
+import {ExerciseService} from '../../../../services/exercise.service';
+import {CompleteService} from '../../../../services/complete.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {TypeComplete} from '../../../model/type-complete';
+import {TypeComplete} from '../../../../model/type-complete';
 
 @Component({
   selector: 'app-complete-edit',

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
-import {TypeComplete} from '../../../model/type-complete';
-import {CompleteService} from '../../../services/complete.service';
-import {ActivatedRoute} from '@angular/router';
+import {TypeComplete} from '../../../../model/type-complete';
+import {CompleteService} from '../../../../services/complete.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-complete-list',
@@ -12,10 +12,18 @@ import {ActivatedRoute} from '@angular/router';
 export class CompleteListComponent implements OnInit {
 
   public item$: Observable<TypeComplete>;
-  constructor(private srv: CompleteService, private activeRoute: ActivatedRoute) { }
+  constructor(
+    private srv: CompleteService,
+    private activeRoute: ActivatedRoute,
+    private route: Router
+  ) { }
 
   public load(): void {
     this.item$ = this.srv.searchByExercise(Number(this.activeRoute.snapshot.paramMap.get('id')));
+  }
+
+  public goAdd(): void{
+    this.route.navigate(['complete-create', this.activeRoute.snapshot.paramMap.get('id')]);
   }
 
   public delete(id): void {

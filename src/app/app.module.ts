@@ -9,9 +9,12 @@ import { ExerciseCreateComponent } from './components/exercise/exercise-create/e
 import { TopComponent } from './components/shared/top/top.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {EditorModule} from '@tinymce/tinymce-angular';
-import {CompleteListComponent} from './components/itens/complete-list/complete-list.component';
-import {CompleteEditComponent} from './components/itens/complete-edit/complete-edit.component';
-import {CompleteCreateComponent} from './components/itens/complete-create/complete-create.component';
+import {CompleteListComponent} from './components/itens/type-complete/complete-list/complete-list.component';
+import {CompleteEditComponent} from './components/itens/type-complete/complete-edit/complete-edit.component';
+import {CompleteCreateComponent} from './components/itens/type-complete/complete-create/complete-create.component';
+import { AnswerCreateComponent } from './components/itens/answer/answer-create/answer-create.component';
+import { AnswerEditComponent } from './components/itens/answer/answer-edit/answer-edit.component';
+import { AnswerListComponent } from './components/itens/answer/answer-list/answer-list.component';
 
 
 @NgModule({
@@ -24,6 +27,9 @@ import {CompleteCreateComponent} from './components/itens/complete-create/comple
     CompleteEditComponent,
     CompleteCreateComponent,
     TopComponent,
+    AnswerCreateComponent,
+    AnswerEditComponent,
+    AnswerListComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),
