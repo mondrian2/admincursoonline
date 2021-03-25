@@ -1,10 +1,7 @@
-export class Conjugation {
+export class TranscribeDate {
   id: number;
-  verb: string;
-  first: string;
-  second: string;
-  third: string;
-  firstPlural: string;
-  secondPlural: string;
-  thirdPlural: string;
+  exerciseId: string;
+  date: string;
+  transcribe: string;
+
 }

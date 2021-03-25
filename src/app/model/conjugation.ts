@@ -1,5 +1,11 @@
-export class Plural {
+export class Conjugation {
   id: number;
-  item: string;
-  plural: string;
+  exerciseId: string;
+  verb: string;
+  first: string;
+  second: string;
+  third: string;
+  firstPlural: string;
+  secondPlural: string;
+  thirdPlural: string;
 }

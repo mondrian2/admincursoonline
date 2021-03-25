@@ -1,5 +1,6 @@
-export class Answer {
+export class Plural {
   id: number;
+  exerciseId: string;
   item: string;
-  answer: string;
+  plural: string;
 }

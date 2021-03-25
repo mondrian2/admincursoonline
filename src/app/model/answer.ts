@@ -1,10 +1,6 @@
-export class Exercise {
+export class Answer {
   id: number;
-  level: string;
-  package: string;
-  type: string;
-  number: number;
-  instructionOne: string;
-  instructionTwo: string;
-  instructionTee: string;
+  exerciseId: string;
+  description: string;
+  answer: boolean;
 }

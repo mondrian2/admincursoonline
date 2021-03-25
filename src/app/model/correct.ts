@@ -1,6 +1,6 @@
-export class Alternative {
+export class Correct {
   id: number;
-  ExerciseId: string;
+  exerciseId: string;
   description: string;
   correct: boolean;
 }
