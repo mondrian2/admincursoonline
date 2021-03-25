@@ -9,6 +9,9 @@ import { ExerciseCreateComponent } from './components/exercise/exercise-create/e
 import { TopComponent } from './components/shared/top/top.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {EditorModule} from '@tinymce/tinymce-angular';
+import {CompleteListComponent} from './components/itens/complete-list/complete-list.component';
+import {CompleteEditComponent} from './components/itens/complete-edit/complete-edit.component';
+import {CompleteCreateComponent} from './components/itens/complete-create/complete-create.component';
 
 
 @NgModule({
@@ -17,6 +20,9 @@ import {EditorModule} from '@tinymce/tinymce-angular';
     ExerciseListComponent,
     ExerciseEditComponent,
     ExerciseCreateComponent,
+    CompleteListComponent,
+    CompleteEditComponent,
+    CompleteCreateComponent,
     TopComponent,
   ],
   imports: [

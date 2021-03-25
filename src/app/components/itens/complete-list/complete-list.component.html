@@ -1,8 +1,8 @@
 <app-top [type] = 1></app-top>
-<div class="container">
+<div class="container" *ngIf="item$">
   <div class="row mt-5">
     <div class="col-md-2 col-2  offset-md-3">
-      <a routerLink="/item-complete-create">
+      <a routerLink="/complete-create/1">
         <div class="btn bg-primary text-white ml-2">
           <span class="material-icons">add</span>
         </div>
@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="col-md-4">
-      <a routerLink="/item-complete-edit/{{item.id}}">
+      <a routerLink="/complete-edit/{{item.id}}">
         <div class="btn bg-primary text-white ml-2">
           <span class="material-icons">create</span>
         </div>

@@ -21,7 +21,8 @@ export class CompleteCreateComponent implements OnInit {
   name: string;
 
   constructor(
-    private formBuilder: FormBuilder, private srvEx: ExerciseService,
+    private formBuilder: FormBuilder,
+    private srvEx: ExerciseService,
     protected srv: CompleteService,
     private activeRoute: ActivatedRoute,
     private route: Router
@@ -45,7 +46,7 @@ export class CompleteCreateComponent implements OnInit {
     console.log(this.form.value);
     this.srv.post(this.form.value)
       .subscribe(
-        () => this.route.navigate(['item-complete-list']),
+        () => this.route.navigate(['complete-list', this.form.value.exerciseId]),
         e => console.log(e),
         () => console.log('complete')
       );

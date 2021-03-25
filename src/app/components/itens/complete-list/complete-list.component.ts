@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
 import {TypeComplete} from '../../../model/type-complete';
 import {CompleteService} from '../../../services/complete.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-complete-list',
@@ -11,19 +12,19 @@ import {CompleteService} from '../../../services/complete.service';
 export class CompleteListComponent implements OnInit {
 
   public item$: Observable<TypeComplete>;
-  constructor(private srv: CompleteService) { }
+  constructor(private srv: CompleteService, private activeRoute: ActivatedRoute) { }
 
   public load(): void {
-    this.item$ = this.srv.get();
+    this.item$ = this.srv.searchByExercise(Number(this.activeRoute.snapshot.paramMap.get('id')));
   }
 
   public delete(id): void {
-    this.srv.delete(id).subscribe(r => this.ngOnInit());
+    this.srv.delete(id).subscribe(() => this.ngOnInit());
   }
 
   ngOnInit(): void {
     this.load();
-    this.item$.subscribe(r => console.log(r));
+    this.item$.subscribe(r => console.log('--->', r));
   }
 
 }

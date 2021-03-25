@@ -1,4 +1,4 @@
-<app-top [type] = 2></app-top>
+<app-top [type] = 1></app-top>
 <div class="container">
   <div class="row mt-5">
     <div class="col-md-5 offset-md-4">
@@ -30,7 +30,7 @@
             name="exerciseId"
             id="exerciseIdinput"
           >
-            <option *ngFor="let exercise of exercise$ | async" value="{{exercise.id}}" >{{exercise.command}}</option>
+            <option *ngFor="let exercise of exercise$ | async" value="{{exercise.id}}" [innerHTML]="exercise.instructionOne" ></option>
           </select>
         </div>
         <!-- Exercício -->

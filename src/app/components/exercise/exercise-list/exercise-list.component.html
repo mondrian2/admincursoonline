@@ -16,24 +16,27 @@
     <div class="col-md-6 offset-md-2">
       <div class="container">
         <div class="row">
-          <div class="card shadow border-0 col-md-12 p-1">
+          <div class="card bg-light border-0 col-md-12 p-1">
             <span>Exercise: {{exercise.number}}</span>
             <span [innerHTML]="exercise.instructionOne"></span>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3 text-center bg-light">
       <a routerLink="/exercise-edit/{{exercise.id}}">
-        <div class="btn bg-primary text-white ml-2">
-          <span class="material-icons">create</span>
+        <div class="btn bg-primary text-white mr-1 mt-3">
+          <span class="material-icons">edit</span>
         </div>
       </a>
       <a (click) = "delete(exercise.id)">
-        <div class="btn bg-primary text-white ml-2">
-          <span class="material-icons">clear</span>
+        <div class="btn bg-primary text-white mr-1 mt-3">
+          <span class="material-icons">delete_forever</span>
         </div>
       </a>
+      <div class="btn bg-primary text-white mr-1 mt-3" (click)="goItem(exercise.id, exercise.type)">
+        <span class="material-icons">view_list</span>
+      </div>
     </div>
   </div>
 </div>

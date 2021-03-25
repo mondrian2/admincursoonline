@@ -2,7 +2,8 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpEvent, HttpHeaders} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {Observable} from 'rxjs';
-import {Complete} from '../model/type-complete';
+import {TypeComplete} from '../model/type-complete';
+import {filter} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -11,17 +12,21 @@ export class CompleteService {
 
   constructor(private http: HttpClient) {}
 
-  public get(): Observable<Complete> {
-    return this.http.get<Complete>(`${environment.uriServer}complete-items`);
+  public get(): Observable<TypeComplete> {
+    return this.http.get<TypeComplete>(`${environment.uriServer}complete-items`);
   }
 
-  public search(id: string): Observable<Complete> {
+  public search(id: string): Observable<TypeComplete> {
     console.log(id);
-    return this.http.get<Complete>(`${environment.uriServer}complete-item/${id}`);
+    return this.http.get<TypeComplete>(`${environment.uriServer}complete-item/${id}`);
   }
 
-  public post(data): Observable<Complete> {
-    return this.http.post<Complete>(`${environment.uriServer}complete-item`, data);
+  public searchByExercise(id: number): Observable<TypeComplete> {
+    return this.http.get<TypeComplete>(`${environment.uriServer}complete-item-by-exercise/${id}`);
+  }
+
+  public post(data): Observable<TypeComplete> {
+    return this.http.post<TypeComplete>(`${environment.uriServer}complete-item`, data);
   }
 
   public delete(id: number){
@@ -29,13 +34,13 @@ export class CompleteService {
     return this.http.delete(`${environment.uriServer}complete-item/${id}`);
   }
 
-  public put(id: number, data: Complete) {
+  public put(id: number, data: TypeComplete) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         Authorization: 'my-auth-token'
       })
     };
-    return this.http.put<Complete>(`${environment.uriServer}complete-item/${id}`, data, httpOptions);
+    return this.http.put<TypeComplete>(`${environment.uriServer}complete-item/${id}`, data, httpOptions);
   }
 }

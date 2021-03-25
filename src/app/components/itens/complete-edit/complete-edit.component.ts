@@ -47,7 +47,7 @@ export class CompleteEditComponent implements OnInit {
     console.log(this.form.value);
     this.srv.put(this.form.value.id, this.form.value)
       .subscribe(
-        () => this.route.navigate(['item-complete-list']),
+        () => this.route.navigate(['complete-list', this.form.value.exerciseId]),
         e => console.log(e),
         () => console.log('complete')
       );

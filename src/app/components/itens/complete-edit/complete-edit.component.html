@@ -1,5 +1,4 @@
-<p>complete-edit works!</p>
-<app-top [type] = 2></app-top>
+<app-top [type] = 1></app-top>
 <div class="container">
   <div class="row mt-5">
     <div class="col-md-5 offset-md-4">
@@ -24,14 +23,14 @@
         </div>
         <!-- Exercício -->
         <div class="form-group">
-          <label for="exercicio">Exercicio</label>
+          <label>Exercicio</label>
           <select
             class="form-control"
             formControlName="exerciseId"
             name="exerciseId"
             id="exerciseIdinput"
           >
-            <option *ngFor="let exercise of exercise$ | async" value="{{exercise.id}}" >{{exercise.instructionOne}}</option>
+            <option *ngFor="let exercise of exercise$ | async" value="{{exercise.id}}" [innerHTML]="exercise.instructionOne" ></option>
           </select>
         </div>
         <!-- Exercício -->
