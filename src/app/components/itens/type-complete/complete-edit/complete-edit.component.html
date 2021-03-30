@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row mt-5">
     <div class="col-md-5 offset-md-4">
-      <h1>Itens-Add</h1>
+      <h1>Itens-Edit</h1>
     </div>
   </div>
   <div class="row">
@@ -19,9 +19,12 @@
             id="labelinput"
             aria-describedby="emailHelp"
           >
-          <small id="labellHelp" class="form-text text-muted">Ex: Básico I</small>
+          <div class="col-md-12 card mb-5 text-center text-white mt-2 pt-2 bg-info" *ngIf="expression">
+            <small>Preview Exercício de Completar</small>
+            <p>{{expression}}</p>
+          </div>
         </div>
-        
+
         <!-- opcoes -->
         <ul class="list-group" *ngIf="options">
           <li class="list-group-item active">Formar lacunas com:</li>
@@ -33,17 +36,9 @@
               </label>
             </li>
           </div>
-
-          <div class="col-md-12 card mb-5 text-center text-white pt-2 bg-info" *ngIf="expression">
-            <small>Preview Exercício de Completar</small>
-            <p>{{expression}}</p>
-          </div>
         </ul>
         <!-- opcoes -->
         <div class="row">
-          <div class="col-md-6">
-            <button class="btn btn-info col-md-12 " type="button" (click) = "setPreview()" *ngIf="options" [disabled]="!form.valid">Visualizar</button>
-          </div>
           <div class="col-md-6">
             <button class="btn btn-primary col-md-12 " type="submit" *ngIf="options" >enviar</button>
           </div>

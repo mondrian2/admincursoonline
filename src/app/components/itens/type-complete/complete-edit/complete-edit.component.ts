@@ -19,6 +19,7 @@ export class CompleteEditComponent implements OnInit {
   preview: string[] = [];
   expression: string;
   name: string;
+  savedOptions: any;
 
   constructor(
     private formBuilder: FormBuilder, private srvEx: ExerciseService,
@@ -58,17 +59,20 @@ export class CompleteEditComponent implements OnInit {
       const index = options.controls.findIndex(x => x.value === e.target.value);
       options.removeAt(index);
     }
+    this.setPreview(this.options)
   }
 
   optionsChanged($event: any): void {
     console.log($event.target.value.split(' '));
     this.options = $event.target.value.split(' ');
+    this.setPreview(this.options);
   }
 
-  setPreview(): void {
+
+  setPreview(options: any): void {
     this.preview = [];
-    console.log(this.options);
-    this.options.forEach(op => {
+    console.log(options);
+    options.forEach(op => {
       if (this.form.value.options.indexOf(op) >= 0) {
         this.preview.push(`[${op}]`);
       } else {
@@ -80,7 +84,11 @@ export class CompleteEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.srv.search(this.activeRoute.snapshot.paramMap.get('id'))
-      .subscribe(itemComplete => this.createForm(itemComplete));
+      .subscribe(itemComplete => {
+        this.createForm(itemComplete)
+        this.setPreview(itemComplete.label.split(' '));
+        console.log('---',this.savedOptions)
+      });
   }
 }
 
