@@ -38,11 +38,8 @@ export class CompleteCreateComponent implements OnInit {
     });
   }
 
-  public loadExercise(): void {
-    this.exercise$ = this.srvEx.get();
-  }
-
   add(): void {
+    this.form.value.exerciseId = parseInt(this.activeRoute.snapshot.paramMap.get('id'));
     console.log(this.form.value);
     this.srv.post(this.form.value)
       .subscribe(
@@ -82,6 +79,5 @@ export class CompleteCreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.createForm(new TypeComplete());
-    this.loadExercise();
   }
 }

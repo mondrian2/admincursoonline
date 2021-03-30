@@ -25,7 +25,7 @@ export class ExerciseListComponent implements OnInit {
 
   ngOnInit(): void {
     this.load();
-    this.srv.get().pipe(filter (r => r.number === '001')).subscribe(console.log);
+    this.exercise$.subscribe(r => console.log(r))
   }
 
   public goItem(exerciseId, type): void {

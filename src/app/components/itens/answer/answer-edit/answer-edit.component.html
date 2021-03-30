@@ -1,0 +1,35 @@
+<app-top [type] = 2></app-top>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-5 offset-md-4">
+      <h1>Itens-Edit</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngIf="form" class="col-md-6 offset-md-3">
+      <form [formGroup]="form" (ngSubmit)="update()">
+        <div class="form-group">
+          <label for="descriptioninput">Descricao</label>
+          <input
+            type="text" class="form-control"
+            formControlName="description"
+            name="description"
+            id="descriptioninput"
+            aria-describedby="descricao"
+          >
+        </div>
+        <div class="form-group">
+          <label for="answerinput">Resposta</label>
+          <input
+            type="text" class="form-control"
+            formControlName="answer"
+            name="answer"
+            id="answerinput"
+            aria-describedby="resposta"
+          >
+        </div>
+        <button type="submit" class="btn btn-primary">enviar</button>
+      </form>
+    </div>
+  </div>
+</div>

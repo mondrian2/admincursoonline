@@ -6,7 +6,7 @@
     </div>
   </div>
   <div class="row">
-    <div *ngIf="form" class="col-md-4 offset-md-4">
+    <div *ngIf="form" class="col-md-6 offset-md-3">
       <form [formGroup]="form" (ngSubmit)="add()">
         <div class="form-group">
           <label for="labelinput">label</label>
@@ -21,20 +21,6 @@
           >
           <small id="labellHelp" class="form-text text-muted">Ex: Básico I</small>
         </div>
-        <!-- Exercício -->
-        <div class="form-group">
-          <label for="exampleFormControlSelect2">Exercicio</label>
-          <select
-            class="form-control"
-            formControlName="exerciseId"
-            name="exerciseId"
-            id="exerciseIdinput"
-          >
-            <option *ngFor="let exercise of exercise$ | async" value="{{exercise.id}}" [innerHTML]="exercise.instructionOne" ></option>
-          </select>
-        </div>
-        <!-- Exercício -->
-
         <!-- opcoes -->
         <ul class="list-group" *ngIf="options">
           <li class="list-group-item active">Formar lacunas com:</li>

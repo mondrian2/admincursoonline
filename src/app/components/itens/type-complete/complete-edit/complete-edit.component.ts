@@ -39,11 +39,8 @@ export class CompleteEditComponent implements OnInit {
     });
   }
 
-  public loadExercise(): void {
-    this.exercise$ = this.srvEx.get();
-  }
-
   update(): void {
+    this.form.value.exerciseId = parseInt(this.activeRoute.snapshot.paramMap.get('id'));
     console.log(this.form.value);
     this.srv.put(this.form.value.id, this.form.value)
       .subscribe(
@@ -82,7 +79,6 @@ export class CompleteEditComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadExercise();
     this.srv.search(this.activeRoute.snapshot.paramMap.get('id'))
       .subscribe(itemComplete => this.createForm(itemComplete));
   }
