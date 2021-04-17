@@ -17,6 +17,8 @@
             <option value="Básico II">Básico II</option>
             <option value="Básico III">Básico III</option>
             <option value="Básico IV">Básico IV</option>
+            <option value="Intermediário I">Intermediário I</option>
+            <option value="Intermediário II">Intermediário II</option>
           </select>
         </div>
 
@@ -46,30 +48,10 @@
                  aria-describedby="numero da questao">
         </div>
         <div class="form-group">
-          <label for="instructionOneinput">Istruzione 1:</label>
+          <label for="instructioninput">Istruzione 1:</label>
           <editor
             apiKey="vfgx8r7yexo9xgmf11xwvoclgng4aotepr3vpetqygytgd0t"
-            formControlName="instructionOne" name="instructionOne" id="instructionOneinput"
-            [init]="{
-            toolbar: 'formatselect | bold italic | bullist numlist outdent indent'
-          }"
-          ></editor>
-        </div>
-
-        <div class="form-group">
-          <label for="instructionTwoinput">Istruzione 2 (opzionale):</label>
-          <editor
-            formControlName="instructionTwo" name="instructionTwo" id="instructionTwoinput"
-            [init]="{
-            toolbar: 'formatselect | bold italic | bullist numlist outdent indent'
-          }"
-          ></editor>
-        </div>
-
-        <div class="form-group">
-          <label for="instructionTreeinput">Istruzione 3 (opzionale):</label>
-          <editor
-            formControlName="instructionTree" name="instructionTree" id="instructionTreeinput"
+            formControlName="instruction" name="instruction" id="instructioninput"
             [init]="{
             toolbar: 'formatselect | bold italic | bullist numlist outdent indent'
           }"

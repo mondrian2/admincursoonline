@@ -4,7 +4,5 @@ export class Exercise {
   package: string;
   type: string;
   number: string;
-  instructionOne: string;
-  instructionTwo: string;
-  instructionTree: string;
+  instruction: string;
 }
