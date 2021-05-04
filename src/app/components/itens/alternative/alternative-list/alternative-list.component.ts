@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Answer } from '../../../../model/answer';
-import { AnswerService } from '../../../../services/answer.service';
+import { AlternativeService } from '../../../../services/alternative.service';
+import { Alternative } from 'src/app/model/alternative';
 
 @Component({
-  selector: 'app-answer-list',
-  templateUrl: './answer-list.component.html',
-  styleUrls: ['./answer-list.component.scss'],
+  selector: 'app-alternative-list',
+  templateUrl: './alternative-list.component.html',
+  styleUrls: ['./alternative-list.component.scss'],
 })
-export class AnswerListComponent implements OnInit {
-  public item$: Observable<Answer>;
+export class AlternativeListComponent implements OnInit {
+  public item$: Observable<Alternative>;
   constructor(
-    private srv: AnswerService,
+    private srv: AlternativeService,
     private activeRoute: ActivatedRoute,
     private route: Router
   ) {}
@@ -25,7 +25,7 @@ export class AnswerListComponent implements OnInit {
 
   public goAdd(): void {
     this.route.navigate([
-      'answer-create',
+      'alternative-create',
       this.activeRoute.snapshot.paramMap.get('id'),
     ]);
   }

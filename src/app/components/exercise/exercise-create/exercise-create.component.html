@@ -12,7 +12,7 @@
         <div class="form-group">
           <label for="levelinput">Modulo:</label>
           <select class="form-select" class="form-control" formControlName="level" name="level" id="levelinput"
-                  aria-describedby="Pacote">
+            aria-describedby="Pacote">
             <option value="Básico I">Básico I</option>
             <option value="Básico II">Básico II</option>
             <option value="Básico III">Básico III</option>
@@ -25,7 +25,7 @@
         <div class="form-group">
           <label for="packageinput">Pacchetto:</label>
           <select class="form-select" class="form-control" formControlName="package" name="package" id="packageinput"
-                  aria-describedby="Pacote">
+            aria-describedby="Pacote">
             <option value="1 Pacchetto">1 Pacchetto</option>
             <option value="2 Pacchetto">2 Pacchetto</option>
             <option value="3 Pacchetto">3 Pacchetto</option>
@@ -36,26 +36,24 @@
         <div class="form-group">
           <label for="typeinput">Tipo:</label>
           <select class="form-select" class="form-control" formControlName="type" name="type" id="typeinput"
-                  aria-describedby="tipo">
+            aria-describedby="tipo">
             <option value="1">Completate</option>
-            <option value="2">Alternativa corretta</option>
+            <option value="2">Responda</option>
+            <option value="3">Alternativa</option>
           </select>
         </div>
 
         <div class="form-group">
           <label for="numberinput">Numero:</label>
           <input type="text" class="form-control" formControlName="number" name="number" id="numberinput"
-                 aria-describedby="numero da questao">
+            aria-describedby="numero da questao">
         </div>
         <div class="form-group">
           <label for="instructioninput">Istruzione 1:</label>
-          <editor
-            apiKey="vfgx8r7yexo9xgmf11xwvoclgng4aotepr3vpetqygytgd0t"
-            formControlName="instruction" name="instruction" id="instructioninput"
-            [init]="{
+          <editor apiKey="vfgx8r7yexo9xgmf11xwvoclgng4aotepr3vpetqygytgd0t" formControlName="instruction"
+            name="instruction" id="instructioninput" [init]="{
             toolbar: 'formatselect | bold italic | bullist numlist outdent indent'
-          }"
-          ></editor>
+          }"></editor>
         </div>
         <button type="submit" class="btn btn-primary">enviar</button>
       </form>

@@ -1,0 +1,29 @@
+<app-top [type]=2></app-top>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-5 offset-md-4">
+      <h1>Itens-Edit</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngIf="form" class="col-md-6 offset-md-3">
+      <form [formGroup]="form" (ngSubmit)="update()">
+        <div class="form-group">
+          <label for="descriptioninput">Descricao:</label>
+          <editor apiKey="vfgx8r7yexo9xgmf11xwvoclgng4aotepr3vpetqygytgd0t" formControlName="description"
+            name="description" id="descriptioninput" [init]="{
+            toolbar: 'formatselect | bold italic | bullist numlist outdent indent'
+          }"></editor>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" formControlName="alternativeType" type="checkbox" value=""
+            id="alternativeType">
+          <label class="form-check-label" for="flexCheckDefault">
+            correta?
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary">enviar</button>
+      </form>
+    </div>
+  </div>
+</div>
